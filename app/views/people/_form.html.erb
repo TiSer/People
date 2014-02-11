@@ -1,0 +1,39 @@
+<%= form_for @person, :validate => true, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birthdate, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :birthdate, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sex, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :sex, ['male', 'female'], :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :picture, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :picture, :class => 'text_field' %>
+      <%= image_tag @person.picture.url(:thumb) if @person.picture.present? %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :marital_status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :marital_status, :class => 'check_box' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                people_path, :class => 'btn' %>
+  </div>
+<% end %>

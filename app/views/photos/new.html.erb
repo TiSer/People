@@ -1,0 +1,9 @@
+<br><br>
+<%- model_class = Photo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<br><br>
+<%= form_for @photo, url: person_photos_path(@person), :html => { :class => 'form-horizontal', method: "post" } do |f| %>
+  <%= render :partial => 'form', locals: {:f => f} %>
+<% end %>

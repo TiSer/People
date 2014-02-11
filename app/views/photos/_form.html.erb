@@ -1,0 +1,27 @@
+
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :picture, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :picture, :class => 'text_field' %>
+      <%= image_tag @photo.picture.url(:thumb) if @photo.picture.present? %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :priority, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :priority, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                person_photos_path(@person), :class => 'btn' %>
+  </div>
+

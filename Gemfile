@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.0'
 gem 'rake', '10.0.1'
 
+gem 'thin'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -14,6 +16,8 @@ gem 'sqlite3'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "less-rails"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
@@ -22,9 +26,10 @@ gem 'uglifier', '>= 1.0.3'
 gem "jquery-rails", "< 3.0.0"
 gem 'jquery-ui-rails'
 gem 'fancybox-rails'
-gem "jquery-fileupload-rails"
 
 gem 'paperclip'
+#gem 'will_paginate-bootstrap'
+gem 'bootstrap-will_paginate'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -27,6 +27,7 @@ gem "jquery-rails", "< 3.0.0"
 gem 'jquery-ui-rails'
 gem 'fancybox-rails'
 gem 'bxslider-rails'
+gem 'jquery-validation-rails'
 
 gem 'paperclip'
 #gem 'will_paginate-bootstrap'

@@ -16,3 +16,5 @@
 //= require_tree .
 //= require fancybox
 //= require bxslider
+//= require jquery.validate
+//= require jquery.validate.additional-methods

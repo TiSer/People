@@ -1,7 +1,7 @@
 class Person < ActiveRecord::Base
   default_scope order('name ASC')
 
-  validates_presence_of :name, :birthdate, :sex, :marital_status
+  validates_presence_of :name, :birthdate, :sex
 
   has_many :photos, dependent: :destroy
 

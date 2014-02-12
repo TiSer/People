@@ -82,9 +82,19 @@ class PhotosController < ApplicationController
     end
   end
 
-private
-  def prepare_person
-    @person = Person.find(params[:person_id]) 
+  def destroy_multiple
+    Photo.destroy(params[:photos]) if params[:photos]
+    
+    respond_to do |format|
+      format.html { redirect_to person_photos_path(@person) }
+      format.json { head :no_content }
+    end
   end
+
+
+  private
+    def prepare_person
+      @person = Person.find(params[:person_id]) 
+    end
 
 end

@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  default_scope order('priority ASC')
 
   belongs_to :user  
 

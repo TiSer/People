@@ -10,22 +10,27 @@
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:picture) %></th>
       <th><%= model_class.human_attribute_name(:priority) %></th>
+      <th>Select for delete</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
 
+    <h3>Photo album slider</h3>
     <ul class="bxslider">
     <% @photos.each do |photo| %>
       <li><%= image_tag photo.picture.url(:medium) %></li>
     <% end %>
     </ul>
 
+    <h3>List</h3>
+    <%= form_tag destroy_multiple_person_photos_path(@person), method: :delete do %>
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.title %></td>
         <td><%= image_tag photo.picture.url(:medium) %></td>
         <td><%= photo.priority %></td>
+        <td><%= check_box_tag "photos[]", photo.id %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_person_photo_path(@person, photo), :class => 'btn btn-mini' %>
@@ -37,9 +42,12 @@
         </td>
       </tr>
     <% end %>
+      <%= submit_tag "Delete selected", data: { confirm: "Are you sure?" } %>
+    <% end %>
   </tbody>
 </table>
 
+<br/></br>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_person_photo_path(@person),
             :class => 'btn btn-primary' %>

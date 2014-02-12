@@ -1,6 +1,10 @@
 Persons::Application.routes.draw do
   resources :people do
-    resources :photos
+    resources :photos do
+      collection do
+        delete 'destroy_multiple'
+      end
+    end
   end
 
   # The priority is based upon order of creation:

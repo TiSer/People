@@ -26,6 +26,7 @@ gem 'uglifier', '>= 1.0.3'
 gem "jquery-rails", "< 3.0.0"
 gem 'jquery-ui-rails'
 gem 'fancybox-rails'
+gem 'bxslider-rails'
 
 gem 'paperclip'
 #gem 'will_paginate-bootstrap'
